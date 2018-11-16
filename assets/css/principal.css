@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header{
+    background-color: lightcoral;
+}
+
+main{
+    flex: 1;
+}
+
+
+footer{
+    border-top: 1px solid black;
+    position: fixed;
+    bottom:0;
+    left:0;
+}
