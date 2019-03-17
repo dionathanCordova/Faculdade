@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/box-main.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+    <div class="box box-success">
+        <div class='head'>
+            <div>
+                <img class='avatar' src="assets/img/users/avatarNadia.jpg" alt="">
+            </div>
+            <div class='user-status'>
+                <h4>Nadia Carmichael</h4><br>
+                <p class='system'>Online</p>
+            </div>
+            
+            <div class="box-tools pull-right">                
+                <img class="box-title contatos img-comments" src="assets/img/comments.png" alt="">
+                <img class="box-title video btn_video" src="assets/img/camera.png" alt="">
+            </div>
+        </div>
+
+        <div class='box-main'>
+            <div class='box-message'></div>
+            <div class='box-video'></div>
+            
+            <div class='box-textarea'>
+                <div class='div-textarea'>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Desenbucha Porra ..."></textarea>
+                 </div>
+                <div class="div-button">
+                    <button class="btn_enviar"><img src="assets/img/btn-send.png" alt=""></button>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        const messages = document.querySelector('.box-message')
+        var hei = window.innerHeight -150;
+        messages.style.height = hei + 'px';
+
+        const box_video = document.querySelector('.box-video')
+        box_video.style.height = hei + 80 + 'px';
+
+        const textarea = document.querySelector("textarea")
+        const serverHost = "wss://echo.websocket.org/"
+        // const serverHost = "ws://127.0.0.1:8080/"
+        const ws = new WebSocket(serverHost)
+
+        const selfMsg = (clasName, user, text) => {
+            let divSend = document.createElement('div')
+
+            divSend.className = clasName
+            let divSend2 = document.createElement('div')
+
+            let strongSend = document.createElement('strong')
+            strongSend.innerText = user
+
+            let paragSend = document.createElement('p')
+            paragSend.appendChild(strongSend)
+
+            let ststrongSend2 = document.createElement('strong')
+            ststrongSend2.innerText = text
+
+            let h4Send = document.createElement('h5')
+            h4Send.appendChild(ststrongSend2)
+
+            let horarioSend = document.createElement('p')
+            horarioSend.className = 'horario'
+
+            dataSend = new Date()
+            var minutos = dataSend.getMinutes()            
+            if( minutos < 10) {
+                minutos = '0'+ minutos;
+            }
+            horaSend = dataSend.getHours() + ':' + minutos
+            horarioSend.innerText =  horaSend
+
+            divSend2.appendChild(paragSend)
+            divSend2.appendChild(h4Send)
+            divSend2.appendChild(horarioSend)
+            divSend.appendChild(divSend2)            
+            messages.appendChild(divSend)
+        }
+
+        const mostraTexto = (className, text) => {
+            selfMsg('msg-sended', 'Eu', text)
+            selfMsg('msg-received', 'Nadia Carmichael', text)         
+        }
+
+        const enviarMsg = ev => {
+            if(ev.which == 13) {
+                ev.preventDefault()
+                ws.send(textarea.value)
+
+                mostraTexto('msg-received', textarea.value)
+                let div = document.createElement('div')
+                textarea.value = ''
+            }
+        }
+
+        const btn_send = () => {
+            if(textarea.value != ''){
+                msg = mostraTexto('msg-received', textarea.value)
+                textarea.value = ''
+                return msg
+            }           
+        }
+    
+        let button = document.querySelector('.btn_enviar');
+        button.addEventListener('click',  btn_send)
+
+        
+
+        const conectado = () => {
+            let status = document.querySelector('.system');
+            status.style.display = 'block';
+        }
+
+        const desconectado = ev => mostraTexto('system', 'Conexão Perdida');
+
+        const erro = ev => mostraTexto('system-error', ev);
+
+        textarea.addEventListener('keydown', enviarMsg)
+        ws.addEventListener('open', conectado)
+        ws.addEventListener('close', desconectado)
+        ws.addEventListener('message', ev => console.log(ev.data))
+        ws.addEventListener('error', erro)
+
+    </script> -->
+</body>
+</html>

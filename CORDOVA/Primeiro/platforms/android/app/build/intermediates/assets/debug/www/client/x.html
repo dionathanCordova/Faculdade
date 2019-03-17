@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/box-main.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <style>
+        div.messages{
+            width: 100%;
+            height: 70vh;
+        }
+
+        .received{
+            background-color: aliceblue;
+            width: 50%;
+        }
+        .send{
+            float: right;
+            width: 50%;
+            text-align: left;
+            background-color: greenyellow;
+        }
+
+        textarea{
+            margin-left: 3vw;
+            bottom: 0;
+            width: 73%;
+            height: 5vh;
+            padding: 1vw;
+        }
+
+        .btn-send{
+            margin-top: -12vw;
+            /**/
+        }
+
+        .btn-send > button{
+            margin-right: 3vw;
+            float: right;
+            padding: 3vw 
+        }
+    </style>
+</head>
+<body>
+    <video src=""></video>
+
+    <div class="messages"></div>
+ 
+    <div class="input">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+        <div class="btn-send">
+            <button>Enviar</button>
+        </div>
+        
+    </div>
+
+    <script>
+        const messages = document.querySelector("div.messages")
+        const textarea = document.querySelector("textarea")
+        const serverHost = "wss://echo.websocket.org/"
+        const ws = new WebSocket(serverHost)
+
+        const mostraTexto = (className, text) => {
+            let div = document.createElement('div')
+            div.className = className
+            div.innerHTML = text
+            let br = document.createElement('br')
+            messages.appendChild(br)
+            messages.appendChild(div)
+        }
+
+        const receberMsg = ev => mostraTexto('received', ev.data)
+
+        const enviarMsg = ev => {
+            if(ev.which == 13) {
+                ev.preventDefault()
+                ws.send(textarea.value)
+
+                mostraTexto('send', textarea.value)
+                let div = document.createElement('div')
+                textarea.value = ''
+            }
+        }
+
+        const conectado = ev => mostraTexto('system', 'Online')
+
+        const desconectado = ev => mostraTexto('system', 'Conexão Perdida');
+
+        const erro = ev => mostraTexto('system-error', ev);
+
+        textarea.addEventListener('keydown', enviarMsg)
+        ws.addEventListener('open', conectado)
+        ws.addEventListener('close', desconectado)
+        ws.addEventListener('message', receberMsg)
+        ws.addEventListener('error', erro)
+    </script>
+</body>
+</html>
+
+
+
+// let div = document.createElement('div')
+// div.className = className
+
+// let div2 = document.createElement('div')
+
+// let strong = document.createElement('strong')
+// strong.innerText = 'Nadia Carmichael'
+
+// let parag = document.createElement('p')
+// parag.appendChild(strong)
+
+// let strong2 = document.createElement('strong')
+// strong2.innerText = text
+
+// let h4 = document.createElement('h5')
+// h4.appendChild(strong2)
+
+// let horario = document.createElement('p')
+// horario.className = 'horario'
+// data = new Date()
+// var minutos1 = data.getMinutes()            
+// if( minutos1 < 10) {
+//     minutos1 = '0'+ minutos1;
+// }
+// horaSend = data.getHours() + ':' + minutos1
+// horario.innerText =  horaSend
+
+// div2.appendChild(parag)
+// div2.appendChild(h4)
+// div2.appendChild(horario)
+// div.appendChild(div2)
+
+
+// messages.appendChild(div)

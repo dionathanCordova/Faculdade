@@ -1,0 +1,153 @@
+.box-main{
+    height: 100%;
+    width: 100%;
+   
+}
+.box-message{
+    min-height: 136vmin;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+.data{
+    text-align: center;
+    background-color: rgb(215, 228, 197);
+    width: 30vw;
+    padding: 1vw;
+    margin: auto;
+    margin-top: 1vw;
+}
+
+.box-message .avatar{
+    width: 10vw;
+    border: 1px solid silver;
+    border-radius: 50%;
+}
+
+
+.box-message div.msg-received{
+    width: 100%;
+}
+
+.box-message div.msg-received{
+    width: 100%;
+    float: left;
+}
+
+.box-message div.msg-received > p{
+    font-size: 3vw;
+    margin-left: 0vw;
+}
+
+.box-message div.msg-received > h5{
+    background-color: rgb(241, 240, 240);
+    border: 1px solid rgb(228, 227, 227);
+    border-radius: 1vw;
+    margin-top: -2vw;
+    font-size: 4vw;
+    padding: 1vw;
+    width: 50%;
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+.box-message div.msg-received > .horario{
+    margin-top: -4vw;
+    text-align: left;
+    margin-left: 0vw;
+}
+
+.box-message div.msg-sended{
+    width: 100%;
+   
+}
+ 
+.box-message div.msg-sended{
+    float: right;
+    width: 50%;
+}
+
+.box-message div.msg-sended > p{
+    font-size: 3vw;
+    text-align: right;
+    margin-right: 0vw;
+}
+
+.box-message div.msg-sended > h5{
+    /* background-color: rgb(241, 240, 240); */
+    border: 2px solid rgb(241, 240, 240);
+    border-radius: 1vw;
+    margin-top: -2vw;
+    border-radius: 1vw;
+    font-size: 4vw;
+    padding: 1vw;
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+.box-message div.msg-sended > .horario{
+    margin-top: -4vw;
+    text-align: right;
+    margin-right: 0vw;
+    margin-bottom: 3vw;
+}
+
+/* FIM */
+
+/* BOX VIDEO */
+.box-video{
+    display: none;
+    position: absolute;
+    margin-top: -142vw;
+    background-color: black;
+    width: 100%;
+}
+/* FIM */
+
+
+/* TEXTEAREA */
+.box-textarea {
+    border-top: 1px solid rgb(243, 240, 240);
+    /* position: fixed;  */
+    bottom: 30px;
+    display: flex;
+    height: 11vw;   
+    width: 100%;
+}
+
+.box-textarea > div {
+    margin-left: 1px;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.box-textarea > div.div-textarea{
+    width: 82%;
+}
+
+.box-textarea > div.div-textarea > textarea{
+    padding: 3vw;
+    padding-right: 4vw;
+    height: 6vw;
+    width: 92%;
+    border: 1px solid rgb(231, 231, 235);
+    outline: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.box-textarea > div.div-button{
+    margin-top: 0vw;
+}
+
+.box-textarea > div.div-button > button{
+    /* position: absolute; */
+    margin-left: -5vw;
+    width: 13vw;
+    padding: 2.5vw;
+    background-color: rgb(243, 240, 240);
+    color: azure;
+    border: none;
+}
+
+.box-textarea > div.div-button img{
+    width: 7vw;
+}
