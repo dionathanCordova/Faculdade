@@ -4,12 +4,25 @@
 header('Cache-Control: no-cache');
 header('Content-type: application/json; charset="utf-8"', true);
 
+
+// bc 
+// municipioID: 24
+// localID: 0
+// ano: 2019
+// redirect: true
+
+// ITAJAI
+// municipioID: 23
+// localID: 0
+// ano: 2019
+// redirect: true
+
 $layout = curl_init();
 
 curl_setopt($layout, CURLOPT_URL,'https://balneabilidade.ima.sc.gov.br/relatorio/historico');
 curl_setopt($layout, CURLOPT_POST, 1);
 curl_setopt($layout, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($layout, CURLOPT_POSTFIELDS,'municipioID=20&localID=0&ano=2018&redirect=true');
+curl_setopt($layout, CURLOPT_POSTFIELDS,'municipioID=23&localID=0&ano=2019&redirect=true');
 curl_setopt($layout, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($layout, CURLOPT_SSL_VERIFYPEER, false);
 
