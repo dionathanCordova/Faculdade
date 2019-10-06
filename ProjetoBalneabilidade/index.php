@@ -40,7 +40,7 @@
                 <p>&nbsp</p>
                 <div class='pag'>
                     <ul class="pagination">
-                        <li><a href="#" class="item" id="item-1" name="1" >«</a></li>
+                        <li><a href="#" class="item" id="itemgit -1" name="1" >«</a></li>
                     </ul>    
                 </div>
             </div>  

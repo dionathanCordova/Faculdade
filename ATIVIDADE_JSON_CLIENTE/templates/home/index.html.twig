@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container-Home">
+        <div>
+            <h1>Descrição da Atividade</h1>
+            <p>Realizado por Dionathan de Córdova<p><br>
+            <h3> Questões </h3><br>
+
+            <h3>
+                1 - Com base no padrão ECMA-404 2a Edição/Dezembro de 2017, “The JSON Data Interchange Syntax”, descreva qual o escopo para o uso do JSON.
+            </h3>
+            <p>
+                R: O objetivo desta especificação é apenas definir a sintaxe de textos JSON válidos. Não se destina a fornecer nenhum
+                semântica ou interpretação do texto em conformidade com essa sintaxe. Intencionalmente, também não define como um válido
+                O texto JSON pode ser internalizado nas estruturas de dados de uma linguagem de programação. Existem muitos possíveis
+                semântica que poderia ser aplicada à sintaxe JSON e de várias maneiras que um texto JSON pode ser processado ou
+                mapeado por uma linguagem de programação.
+            </p><br><br>
+
+            <h3>
+                2 - Tomando por exemplo a imagem abaixo, crie um JSON para representar os dados segundo a estrutura representada. Utilize dados de exemplo.
+            </h3>
+                <img src="{{ asset('images/imageQuestao2.PNG')}}"> 
+            <p>
+               <a href="{{ path('home_questao2')}}">
+                    <div class="form-group form-button">
+                        <input type="button" name="signup" id="myBtn" class="form-submit" value="Gerar Json"/>
+                    </div>
+                </a>
+            </p><br><br>
+            
+            <h3>
+                3 - Na linguagem de programação de sua escolha, faça uma função que receba o conteúdo em XML e converta para JSON.</h3>
+            <p><br>
+                <p>Exemplo de url 1: https://atividade-json-faculdade.herokuapp.com/outroexemplo.xml</p>
+                <p>Exemplo de url 2: https://atividade-json-faculdade.herokuapp.com/questao3.xml</p><br>
+                
+               <form method="POST" class="register-form" id="register-form" action="{{ path('home_xml_to_json')}}">
+                    <div class="form-group">
+                        <label for="name"><i class="zmdi zmdi-search material-icons-name"></i></label>
+                        <input type="text" name="url" id="nome" placeholder="Informe uma url contendo um arquivo XML"/>
+                    </div>
+
+                     <div class="form-group form-button">
+                        <button type="submit" class="form-submit" value="Editar"/>Gerar Json</button>
+                    </div>
+                </form><br>
+            </p><br><br>
+           
+            <h3>
+                4 - Na linguagem de programação de sua escolha, faça uma função que receba o conteúdo em JSON e converta para XML.</h3>
+            <p><br>
+                <p>Exemplo de url 1: https://atividade-json-faculdade.herokuapp.com/outroexemplo.json</p>
+                <p>Exemplo de url 2: https://atividade-json-faculdade.herokuapp.com/questao4.json</p><br>
+                
+               <form method="POST" class="register-form" id="register-form" action="{{ path('home_json_to_xml_ecria')}}">
+                    <div class="form-group">
+                        <label for="name"><i class="zmdi zmdi-search material-icons-name"></i></label>
+                        <input type="text" name="url" id="nome" placeholder="Informe uma url contendo um arquivo Json"/>
+                    </div>
+
+                     <div class="form-group form-button">
+                        <button type="submit" class="form-submit" value="Editar"/>Gerar XML</button>
+                    </div>
+                </form><br>
+            </p><br><br>
+
+            <p class="lead">Done. </p>
+        </div>
+    </div>
+
+{% endblock %}
