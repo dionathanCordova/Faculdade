@@ -9,6 +9,6 @@
   "author": "Dionathan",
   "license": "Apache-2.0",
   "dependencies": {
-    "ws": "^6.1.4"
+    "ws": "^7.4.6"
   }
 }
